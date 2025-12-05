@@ -1,0 +1,16 @@
+{
+  "name": "yoof-pricing-api",
+  "version": "1.0.0",
+  "description": "Azure Function to estimate YOOF pricing using Azure Retail Prices API.",
+  "scripts": {
+    "start": "func start"
+  },
+  "dependencies": {
+    // Ce module est nécessaire pour faire des requêtes HTTP externes (vers l'API de prix Azure)
+    "node-fetch": "^2.6.7" 
+  },
+  "engines": {
+    // Assurez-vous que cette version correspond à la version LTS que vous avez sélectionnée (22 LTS)
+    "node": ">=18.x"
+  }
+}
