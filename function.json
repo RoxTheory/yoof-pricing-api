@@ -1,0 +1,19 @@
+{
+  "bindings": [
+    {
+      // authLevel: "function" assure que seule l'équipe YOOF (avec la clé) peut appeler cette API
+      "authLevel": "function",
+      "type": "httpTrigger",
+      "direction": "in",
+      "name": "req",
+      // Nous utilisons POST pour recevoir les données du formulaire client
+      "methods": ["post"] 
+    },
+    {
+      "type": "http",
+      "direction": "out",
+      "name": "res"
+    }
+  ],
+  "scriptFile": "index.js"
+}
