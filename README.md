@@ -45,5 +45,5 @@ Solution : Les outils Azure Core Tools ont été réinstallés, et le test a ét
 
 Conclusion : Le test local a été un succès , confirmant la validité du code avant l'intégration.
 
-🤝 III. Pour l'Intégration Front-end (Léo)
+🤝 III. Pour l'Intégration Front-end
 L'API est prête à être consommée. Il est recommandé que l'appel HTTP soit effectué depuis le Back-end du site Yoof pour une meilleure sécurité et gestion des clés futures, plutôt que directement depuis le JavaScript du front-end.
