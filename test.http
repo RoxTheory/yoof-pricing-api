@@ -1,0 +1,10 @@
+### Test de l'API Yoof en Production
+# URL: https://yoof-price-estimator.azurewebsites.net/api/HttpTrigger
+
+POST https://yoof-price-estimator.azurewebsites.net/api/HttpTrigger HTTP/1.1
+Content-Type: application/json
+
+{
+    "numberOfUsers": 20,
+    "tier": "Standard"
+}
