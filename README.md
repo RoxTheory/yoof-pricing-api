@@ -1,9 +1,49 @@
- RÉSUMÉ_CI_CD.md : Déploiement Stable de l'API Yoof-Pricing✨ Aperçu du Projet et ObjectifCe document retrace les étapes critiques et les solutions appliquées pour déployer et stabiliser l'API Yoof-Pricing, une fonction Azure sans serveur conçue pour calculer les coûts d'abonnement Yoof (numberOfUsers et tier).Après plusieurs défis liés à la structure du dépôt et au pipeline CI/CD, l'API est désormais entièrement validée et prête pour l'intégration par le front-end.
- 🏗️ I. Préparation et Validation du CodeStatutÉtapeDescriptionOutils Clés✅ Succès1. Logique et SécuritéÉcriture du code Node.js (index.js) pour le calcul du prix avec validation des entrées (numberOfUsers, tier).VS Code, JavaScript✅ Succès2. Validation LocalDémarrage de la fonction en local. Le test via test.http a retourné 200 OK  avec le prix calculé, confirmant l'absence de bugs dans le code.npm install, func start, test.http⚙️ II. Stabilisation de l'Architecture CI/CDLe principal défi était une structure de dossier redondante (yoof-pricing-api-main/yoof-pricing-api-main) qui provoquait des échecs de déploiement (erreur cannot find 'yoof-pricing-api-main') .A. Correction de la Structure Git et DéploiementRéorganisation du Dépôt : Tous les fichiers et dossiers ont été déplacés du sous-dossier superflu vers la racine du dépôt pour une architecture propre et standard.Action : Commandes PowerShell Move-Item -Force et Remove-Item -Force.Synchronisation Forcée : Résolution d'un conflit de fusion sur le fichier de workflow causé par des modifications locales et distantes.Action : git pull, git rm, git push.Correction du Pipeline YML : Le fichier .github/workflows/main_yoof-price-estimator.yml a été mis à jour pour utiliser le chemin de la racine (.) pour la compilation et le déploiement.YAML# Le chemin est maintenant la racine du dépôt
-BUILD_PATH: '.' 
-DEPLOY_PACKAGE_NAME: '.'
-B. Résultat Final du DéploiementLe pipeline GitHub Actions s'est terminé avec succès après ces corrections.StatutÉtapesRésultat✅ SUCCESSbuild et deployLe code final est en production sur Azure Functions.🌐 URL de Productionhttps://yoof-price-estimator.azurewebsites.net/api/HttpTriggerL'API est en ligne et accessible (malgré les restrictions DNS locales sur le poste de développement).💡 III. Note pour l'Intégration (Léo)L'API est prête à recevoir les requêtes POST du front-end de Léo.Endpoint à Utiliser : https://yoof-price-estimator.azurewebsites.net/api/HttpTriggerFormat de la Requête (Body) :JSON{
+🏆 API Yoof-Pricing : Résumé du Projet et Stabilisation CI/CD
+Ce document présente l'API Yoof-Pricing, une fonction Azure Serverless conçue pour calculer les coûts d'abonnement en temps réel, et récapitule les étapes critiques pour stabiliser son pipeline de déploiement continu.
+
+🚀 I. Statut Actuel et URL de l'API
+L'API est entièrement validée, le code est sécurisé, et le pipeline CI/CD est stable.
+
+Composant	Statut	Détails
+Code	✅ Validé localement	La logique de calcul (gestion des utilisateurs et des niveaux) est testée et fonctionne sans erreur.
+Déploiement	✅ Pipeline stable	Le workflow GitHub Actions se termine avec un statut SUCCESS grâce à la structure de dépôt corrigée.
+Endpoint	🌐 Prêt pour l'intégration	https://yoof-price-estimator.azurewebsites.net/api/HttpTrigger
+
+Exporter vers Sheets
+
+Format de la Requête (POST)
+JSON
+
+{
     "numberOfUsers": 20,
     "tier": "Standard"
 }
-Méthode Recommandée : L'appel devrait se faire depuis le Back-end du site de Léo pour des raisons de sécurité, même si cette API ne nécessite pas de clé secrète pour le moment.
+🛠️ II. Résolution des Défis Techniques Majeurs
+La phase la plus complexe a été la correction de l'architecture du dépôt, qui a nécessité une intervention manuelle sur Git et le pipeline.
+
+1. 📂 Réorganisation du Dépôt
+Un problème de structure de dossier redondante (yoof-pricing-api-main/yoof-pricing-api-main) a bloqué le déploiement.
+
+Problème : Le pipeline ne pouvait pas localiser les fichiers sources, provoquant l'erreur package : cannot find 'yoof-pricing-api-main' lors de l'étape deploy.
+
+Correction : Déplacement forcé de tous les fichiers du sous-dossier vers la racine du dépôt. Cette action a été sécurisée par des commandes PowerShell spécifiques et un push Git résolvant les conflits.
+
+2. 🔗 Stabilisation du CI/CD (GitHub Actions)
+L'action de déploiement a été mise à jour pour refléter la nouvelle structure du projet.
+
+Correction YML : Le fichier .github/workflows/main_yoof-price-estimator.yml a été mis à jour pour définir le chemin de construction et de package à la racine (.).
+
+YAML
+
+env:
+  BUILD_PATH: '.' 
+  DEPLOY_PACKAGE_NAME: '.'
+3. 🛡️ Validation du Test Local
+L'environnement de développement Windows a présenté des problèmes de réseau (erreur getaddrinfo ENOTFOUND yoof-price-estimator.azurewebsites.net lors du test de l'URL de production ) et des problèmes d'outils (func start).
+
+Solution : Les outils Azure Core Tools ont été réinstallés, et le test a été effectué en pointant vers l'instance locale (http://localhost:7071).
+
+Conclusion : Le test local a été un succès , confirmant la validité du code avant l'intégration.
+
+🤝 III. Pour l'Intégration Front-end (Léo)
+L'API est prête à être consommée. Il est recommandé que l'appel HTTP soit effectué depuis le Back-end du site Yoof pour une meilleure sécurité et gestion des clés futures, plutôt que directement depuis le JavaScript du front-end.
