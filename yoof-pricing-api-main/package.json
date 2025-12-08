@@ -1,0 +1,14 @@
+{
+  "name": "yoof-pricing-api",
+  "version": "1.0.0",
+  "description": "Azure Function to estimate YOOF pricing using Azure Retail Prices API.",
+  "scripts": {
+    "start": "func start"
+  },
+  "dependencies": {
+    "node-fetch": "^2.6.7" 
+  },
+  "engines": {
+    "node": ">=18.x"
+  }
+}
