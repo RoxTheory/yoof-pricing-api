@@ -7,8 +7,11 @@ on:
   workflow_dispatch:
 
 env:
-  AZURE_FUNCTIONAPP_PACKAGE_PATH: 'yoof-pricing-api-main'
+  # Chemin pour les actions de build/upload.
+  BUILD_PATH: 'yoof-pricing-api-main'
   NODE_VERSION: '22.x'
+  # Le package à déployer est le dossier lui-même, téléchargé à la racine de l'Artifact.
+  DEPLOY_PACKAGE_NAME: 'yoof-pricing-api-main'
 
 jobs:
   build:
@@ -28,7 +31,7 @@ jobs:
       - name: 'Resolve Project Dependencies Using Npm'
         shell: pwsh
         run: |
-          pushd './${{ env.AZURE_FUNCTIONAPP_PACKAGE_PATH }}'
+          pushd './${{ env.BUILD_PATH }}'
           npm install
           npm run build --if-present
           npm run test --if-present
@@ -38,7 +41,7 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: node-app
-          path: ${{ env.AZURE_FUNCTIONAPP_PACKAGE_PATH }}
+          path: ${{ env.BUILD_PATH }} # Charge le dossier complet dans l'artifact
 
   deploy:
     runs-on: windows-latest
@@ -66,4 +69,4 @@ jobs:
         with:
           app-name: 'YOOF-Price-Estimator'
           slot-name: 'Production'
-          package: ${{ env.AZURE_FUNCTIONAPP_PACKAGE_PATH }}
+          package: ${{ env.DEPLOY_PACKAGE_NAME }} # Utilise la variable définie pour le dossier
