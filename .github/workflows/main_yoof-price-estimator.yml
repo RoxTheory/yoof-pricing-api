@@ -1,6 +1,3 @@
-# Docs for the Azure Web Apps Deploy action: https://github.com/azure/functions-action
-# More GitHub Actions for Azure: https://github.com/Azure/actions
-
 name: Build and deploy Node.js project to Azure Function App - YOOF-Price-Estimator
 
 on:
@@ -10,14 +7,15 @@ on:
   workflow_dispatch:
 
 env:
-  AZURE_FUNCTIONAPP_PACKAGE_PATH: '.' # set this to the path to your web app project, defaults to the repository root
-  NODE_VERSION: '22.x' # set this to the node version to use (supports 8.x, 10.x, 12.x)
+  # Chemin pour les actions de build/upload.
+  BUILD_PATH: 'yoof-pricing-api-main' # Dossier où se trouvent les fichiers dans le dépôt
+  NODE_VERSION: '22.x'
 
 jobs:
   build:
     runs-on: windows-latest
     permissions:
-      contents: read #This is required for actions/checkout
+      contents: read
       
     steps:
       - name: 'Checkout GitHub Action'
@@ -31,7 +29,7 @@ jobs:
       - name: 'Resolve Project Dependencies Using Npm'
         shell: pwsh
         run: |
-          pushd './${{ env.AZURE_FUNCTIONAPP_PACKAGE_PATH }}'
+          pushd './${{ env.BUILD_PATH }}'
           npm install
           npm run build --if-present
           npm run test --if-present
@@ -41,21 +39,21 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: node-app
-          path: .
+          path: ${{ env.BUILD_PATH }} # Charge le dossier complet dans l'artifact
 
   deploy:
     runs-on: windows-latest
     needs: build
     permissions:
-      id-token: write #This is required for requesting the JWT
-      contents: read #This is required for actions/checkout
+      id-token: write
+      contents: read
 
     steps:
       - name: Download artifact from build job
         uses: actions/download-artifact@v4
         with:
           name: node-app
-      
+          
       - name: Login to Azure
         uses: azure/login@v2
         with:
@@ -69,5 +67,4 @@ jobs:
         with:
           app-name: 'YOOF-Price-Estimator'
           slot-name: 'Production'
-          package: ${{ env.AZURE_FUNCTIONAPP_PACKAGE_PATH }}
-          
+          package: '.' # CORRECTION DÉFINITIVE : L'artifact dézippé doit être cherché à la racine.
