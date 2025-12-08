@@ -8,10 +8,8 @@ on:
 
 env:
   # Chemin pour les actions de build/upload.
-  BUILD_PATH: 'yoof-pricing-api-main'
+  BUILD_PATH: 'yoof-pricing-api-main' # Dossier où se trouvent les fichiers dans le dépôt
   NODE_VERSION: '22.x'
-  # Le package à déployer est le dossier lui-même, téléchargé à la racine de l'Artifact.
-  DEPLOY_PACKAGE_NAME: 'yoof-pricing-api-main'
 
 jobs:
   build:
@@ -69,4 +67,4 @@ jobs:
         with:
           app-name: 'YOOF-Price-Estimator'
           slot-name: 'Production'
-          package: ${{ env.DEPLOY_PACKAGE_NAME }} # Utilise la variable définie pour le dossier
+          package: '.' # CORRECTION DÉFINITIVE : L'artifact dézippé doit être cherché à la racine.
