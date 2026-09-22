@@ -1,0 +1,320 @@
+# YOOF - Your Online Office
+## Cloud Office Infrastructure for Small & Medium Businesses
+
+---
+
+## 🎯 What is YOOF?
+
+**YOOF provides complete, enterprise-grade office infrastructure in the cloud - delivered in 30 minutes.**
+
+No servers to buy. No IT team to hire. No complex setup.
+Just modern, secure office technology that works from day one.
+
+---
+
+## 💼 What Clients Get
+
+### Complete Office Solution
+- **Windows Desktop Environment** - Full Windows 10 Enterprise for every employee
+- **Microsoft 365 Integration** - Email, Teams, Office apps, OneDrive, SharePoint
+- **Active Directory** - Professional user and device management
+- **Secure Access** - Simple thin clients (Raspberry Pi) that connect instantly
+
+### Three Service Tiers
+
+| **Basic** | **Standard** | **Premium** |
+|-----------|--------------|-------------|
+| Single server | Redundant servers | Redundant servers |
+| Basic monitoring | 30-day backups | 90-day backups |
+| Perfect for startups | M365 Business Standard | M365 E3 with advanced security |
+| Starting at €X/user/month | Starting at €Y/user/month | Starting at €Z/user/month |
+
+---
+
+## ✨ Key Advantages for Clients
+
+### 🚀 **Fast Deployment**
+- **30 minutes** from order to working environment
+- Automated infrastructure setup
+- Pre-configured security and policies
+- Users working same day
+
+### 💰 **Predictable Costs**
+- Fixed monthly price per user
+- No hardware purchase required
+- No maintenance costs
+- No surprise bills
+
+### 🔒 **Enterprise Security**
+- Automatic daily backups (Standard/Premium)
+- Military-grade encryption
+- Multi-factor authentication ready
+- Compliance with data protection regulations
+
+### 🌍 **Work From Anywhere**
+- Access from office, home, or travel
+- Same experience on every device
+- Automatic synchronization
+- Reliable internet connection is all you need
+
+### 🛡️ **Hassle-Free IT**
+- YOOF handles all infrastructure
+- 24/7 monitoring and alerts
+- Automatic updates and patches
+- Expert support when needed
+
+---
+
+## 🖥️ The Thin Client Advantage
+
+**What clients receive:**
+- Small, silent device (Raspberry Pi Zero 2 W)
+- Plugs into any monitor with HDMI
+- No noise, no heat, minimal power consumption
+- Boots in seconds, auto-connects to their Windows desktop
+
+**Benefits:**
+- ✅ No expensive PCs to purchase
+- ✅ No hardware maintenance
+- ✅ Replace in 5 minutes if device fails
+- ✅ Works for 5+ years
+- ✅ Ultra-low power consumption (~€2/year electricity)
+
+---
+
+## 📊 Perfect For
+
+### Small Businesses (5-20 employees)
+- No IT department needed
+- Professional tools from day one
+- Scale as you grow
+
+### Medium Businesses (20-100 employees)
+- Enterprise features at SMB price
+- Redundant infrastructure
+- Advanced compliance tools
+
+### Remote Teams
+- Secure access from anywhere
+- Consistent experience for all users
+- Easy onboarding of new team members
+
+---
+
+## 🎓 What Makes YOOF Different
+
+### Traditional IT Setup
+- ❌ Weeks or months to deploy
+- ❌ €10,000+ upfront hardware costs
+- ❌ Hire IT staff or consultant
+- ❌ Complex licensing
+- ❌ Maintenance headaches
+
+### YOOF Solution
+- ✅ 30 minutes to deploy
+- ✅ €0 upfront - monthly subscription only
+- ✅ YOOF handles all technical work
+- ✅ Simple per-user pricing
+- ✅ Worry-free operation
+
+---
+
+## 🔄 How It Works (Client Perspective)
+
+### Step 1: Choose Your Plan
+Fill out simple form on YOOF website:
+- How many users?
+- Which service tier?
+- Company information
+
+### Step 2: YOOF Does Everything
+*(30 minutes - automated)*
+- Infrastructure deployment
+- Security configuration
+- Microsoft 365 integration
+- User account setup
+
+### Step 3: Receive Thin Clients
+Small devices shipped to client address.
+Plug into monitor, power on, log in - done!
+
+### Step 4: Start Working
+- Users access their Windows desktop
+- Microsoft 365 ready to use
+- Same credentials for everything
+- YOOF monitors and maintains infrastructure 24/7
+
+---
+
+## 💡 Real-World Benefits
+
+### For Business Owners
+**"No more IT headaches"**
+- Fixed monthly costs
+- Professional infrastructure
+- Focus on business, not technology
+- Scale up or down easily
+
+### For Employees
+**"Just like a regular office PC"**
+- Full Windows desktop
+- All Microsoft Office apps
+- Teams for collaboration
+- Access from home when needed
+
+### For Finance
+**"Budget-friendly and predictable"**
+- No capital expenditure
+- Operating expense only
+- Volume discounts available
+- Cancel anytime (no lock-in)
+
+---
+
+## 🛠️ What's Included
+
+### Infrastructure (YOOF manages)
+- Azure cloud servers
+- Automatic backups
+- 24/7 monitoring
+- Security updates
+- Network configuration
+
+### Software Licenses (included in price)
+- Windows 10 Enterprise
+- Microsoft 365 (Standard/Premium tiers)
+- Active Directory
+- Collaboration tools
+
+### Hardware (client receives)
+- Thin client devices
+- Cables and power supplies
+- Setup instructions
+- Spare device (on request)
+
+### Support
+- Email support for admins
+- Remote assistance
+- Documentation portal
+- Emergency hotline (Premium)
+
+---
+
+## 📈 Growth Path
+
+YOOF scales with your business:
+
+**Start Small**
+- Begin with 5 users on Basic tier
+- Test the solution risk-free
+
+**Grow Confidently**
+- Add users in minutes (not weeks)
+- Upgrade tier for more features
+- No infrastructure changes needed
+
+**Enterprise Ready**
+- Support for 100+ users
+- Advanced security features
+- Custom compliance requirements
+- Dedicated support team
+
+---
+
+## 🔐 Security & Compliance
+
+### Built-In Security
+- Encrypted connections (TLS 1.3)
+- Multi-factor authentication support
+- Automatic security updates
+- Isolated customer environments
+
+### Backup & Disaster Recovery
+- Automatic daily backups (Standard/Premium)
+- 30 or 90-day retention
+- Quick restore capability
+- Geo-redundant storage
+
+### Compliance Ready
+- GDPR compliant infrastructure
+- Data residency controls
+- Audit logs available
+- Security documentation provided
+
+---
+
+## 💬 Common Questions
+
+### "What if internet goes down?"
+Users can work offline in Microsoft 365 apps. Changes sync when internet returns.
+
+### "What if thin client breaks?"
+Swap with spare device, user logs in - all data safe in cloud. 5-minute fix.
+
+### "Can we add more users later?"
+Yes! Add users in minutes. Pay only for active users each month.
+
+### "What about our specific software?"
+Windows applications can be installed on VMs. We help evaluate compatibility.
+
+### "How secure is our data?"
+Enterprise-grade security. Same infrastructure used by Fortune 500 companies.
+
+---
+
+## 🎯 Next Steps for Prospects
+
+### For Interested Clients
+
+1. **Schedule Demo** (15 minutes)
+   - See YOOF in action
+   - Ask specific questions
+   - Get custom quote
+
+2. **Free Trial** (Optional, 7 days)
+   - Test with 2-5 users
+   - No credit card required
+   - Full features available
+
+3. **Easy Onboarding** (Same day)
+   - Sign contract
+   - Provide user list
+   - Infrastructure deployed
+   - Start working immediately
+
+### Contact YOOF
+- **Email**: sales@yoof.com
+- **Phone**: +XX XXX XXX XXXX
+- **Web**: https://www.yoof.com
+- **Demo Request**: https://www.yoof.com/demo
+
+---
+
+## 📋 Technical Specifications (For Technical Prospects)
+
+### Infrastructure
+- **Cloud Provider**: Microsoft Azure
+- **Regions**: Europe West, North Europe (others available)
+- **Compute**: Dual Domain Controllers (Standard/Premium), Client VMs
+- **Networking**: Isolated VNets, NSG protection, private addressing
+- **Storage**: Premium SSD, geo-redundant backups
+
+### Client Devices
+- **Hardware**: Raspberry Pi Zero 2 W
+- **OS**: Linux (optimized for RDP)
+- **Connectivity**: WiFi or Ethernet
+- **Power**: 5V 2.5A USB-C
+- **Dimensions**: 65mm x 30mm x 5mm
+
+### Security Features
+- LDAPS (secure LDAP)
+- Azure AD Connect (hybrid identity)
+- Network isolation per client
+- Encrypted credentials (GPG/AES256)
+- Security policies via Group Policy
+
+---
+
+**YOOF - Modern office infrastructure, delivered.**
+
+*Last updated: December 2025*
